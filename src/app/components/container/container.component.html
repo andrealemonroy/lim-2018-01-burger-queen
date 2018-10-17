@@ -1,0 +1,5 @@
+<app-list-of-food (orderEvent)="receiveOrder($event)"></app-list-of-food>
+<!-- <app-order [order]="food"></app-order> -->
+<div *ngFor="let message of messages">
+    <span>{{message['dataOrder']}}</span><span> {{ message['price']}}</span>
+</div>
