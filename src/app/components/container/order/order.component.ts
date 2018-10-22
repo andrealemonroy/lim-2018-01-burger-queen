@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FirestoreService } from '../../../services/services.service';
-import { updateClassProp } from '../../../../../node_modules/@angular/core/src/render3/styling';
-import { getOrCreateChangeDetectorRef } from '../../../../../node_modules/@angular/core/src/render3/di';
+
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',

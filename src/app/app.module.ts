@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { OrderComponent } from './components/container/order/order.component';
-import { SendComponent } from './components/container/send/send.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 
@@ -21,8 +20,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     ListOfFoodComponent,
     MyNavComponent,
     ContainerComponent,
-    OrderComponent,
-    SendComponent
+    OrderComponent
   ],
   imports: [
     BrowserModule,
