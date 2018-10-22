@@ -1,0 +1,15 @@
+<div *ngFor="let ord of order">
+  <p>{{ord.dataOrder}} <span>S/.{{ord.price}}.00</span></p>
+</div>
+
+
+<p>Total:<span >S/.{{price}}.00 </span></p>
+<button (click)="sendOrder()" >Enviar Orden</button>
+
+
+<ng-template #noOrder>
+  <p>Sin pedido</p>
+</ng-template>
+<ng-template #sent>
+  <p></p>
+</ng-template>

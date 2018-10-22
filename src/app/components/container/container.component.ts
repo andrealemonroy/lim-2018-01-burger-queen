@@ -8,12 +8,20 @@ import { Component, OnInit } from '@angular/core';
 export class ContainerComponent implements OnInit {
 
   constructor() { }
-  messages = [{}];
+
+  messages = [];
   message = '';
+  total = 0;
   ngOnInit() {
   }
+
   receiveOrder($event) {
     this.messages.push($event);
     this.message = $event;
+    this.receivePrice();
+  }
+
+  receivePrice() {
+  this.total = this.messages.reduce(( a, b ) =>  a +  b.price , 0);
   }
 }

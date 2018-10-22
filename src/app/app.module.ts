@@ -10,6 +10,9 @@ import { ContainerComponent } from './components/container/container.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { OrderComponent } from './components/container/order/order.component';
+import { SendComponent } from './components/container/send/send.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -17,7 +20,9 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     AppComponent,
     ListOfFoodComponent,
     MyNavComponent,
-    ContainerComponent
+    ContainerComponent,
+    OrderComponent,
+    SendComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatIconModule,
     MatListModule,
     AngularFireModule.initializeApp(environment.firebase),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]

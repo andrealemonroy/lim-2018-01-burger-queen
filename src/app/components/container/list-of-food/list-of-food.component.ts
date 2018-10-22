@@ -10,11 +10,12 @@ import { FirestoreService } from '../../../services/services.service';
 
 export class ListOfFoodComponent implements OnInit {
   public order: any;
+  public price: any;
+
   @Output() orderEvent = new EventEmitter<string>();
   public orders: any;
   constructor(private firestoreService: FirestoreService) {
     this.firestoreService.getOrders().subscribe(data => {
-      console.log(data);
       this.orders = data.filter(dat => {
         return dat['typeOfFood'] === 'desayuno';
       });
@@ -50,7 +51,11 @@ export class ListOfFoodComponent implements OnInit {
     });
   }
   sendOrder(i) {
-    console.log(this.orders[i]);
+    // console.log(this.orders[i]);
     this.orderEvent.emit(this.orders[i]);
+    this.price = this.orders[i].price;
+    // console.log(this.price);
+    // return this.price;
   }
+
 }

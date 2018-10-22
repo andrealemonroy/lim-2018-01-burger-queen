@@ -14,21 +14,22 @@ export class FirestoreService {
     return this.firestore.collection('order').add(data);
   }
 
-  getOrder(orderId: string) {
-    return this.firestore.collection('order').doc(orderId).snapshotChanges();
+  getSentOrders() {
+    return this.firestore.collection('orderToKitchen').valueChanges();
   }
 
   getOrders() {
     return this.firestore.collection('order').valueChanges();
   }
 
-  updateOrder(orderId: string, data: any) {
-    return this.firestore.collection('order').doc(orderId).set(data);
+  updateOrder(data: any) {
+    const date = new Date().getTime();
+    return this.firestore.collection('orderToKitchen').add({data});
   }
   addOrder(id) {
     this.orders['order'] = this.orders['order'].map((order) => {
       if (order.id === id) {
-        return { ...order};
+        return { ...order };
       }
       return this.orders;
     });

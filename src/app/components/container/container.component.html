@@ -1,5 +1,8 @@
-<app-list-of-food (orderEvent)="receiveOrder($event)"></app-list-of-food>
-<!-- <app-order [order]="food"></app-order> -->
-<div *ngFor="let message of messages">
-    <span>{{message['dataOrder']}}</span><span> {{ message['price']}}</span>
+<div class="row">
+  <app-list-of-food (orderEvent)="receiveOrder($event)" class="col-md-6"></app-list-of-food>
+  <app-order [order]="messages" [price]="total" class="col-md-6 offset-md-6"></app-order>
+  <!-- <app-send [order]="messages"></app-send> -->
 </div>
+<!-- <div *ngFor="let message of messages" class="col-md-12 offset-md-12">
+    <span>{{message['dataOrder']}}</span><span> {{ message['price']}}</span>
+</div> -->

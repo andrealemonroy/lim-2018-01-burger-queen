@@ -1,0 +1,6 @@
+<div *ngFor="let ord of order">
+
+</div>
+<p *ngIf="order?.length>0;else noOrder">Total: <span>{{ord.price}}</span></p>
+<button (click)="sendOrder();" >Enviar Orden</button>  
+
