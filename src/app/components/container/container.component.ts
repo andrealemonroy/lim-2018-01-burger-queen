@@ -10,7 +10,7 @@ export class ContainerComponent implements OnInit {
   constructor() { }
 
   messages = [];
-  message = '';
+  message = [];
   total = 0;
   ngOnInit() {
   }
@@ -19,9 +19,17 @@ export class ContainerComponent implements OnInit {
     this.messages.push($event);
     this.message = $event;
     this.receivePrice();
+    // this.deleteItem();
   }
 
   receivePrice() {
-  this.total = this.messages.reduce(( a, b ) =>  a +  b.price , 0);
+    this.total = this.messages.reduce((a, b) => a + b.price, 0);
+  }
+  deleteItem($event) {
+    this.message = $event;
+    // console.log(this.messages);
+    this.total = this.messages.reduce((a, b) => a + b.price, 0);
+
+    ;
   }
 }

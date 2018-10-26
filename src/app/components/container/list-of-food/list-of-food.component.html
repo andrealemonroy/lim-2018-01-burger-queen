@@ -1,10 +1,15 @@
 
-<div class="row">
-  <button mat-button class="col-md-6" color="primary" (click)="breakfast()">Desayuno</button>
-  <button mat-button class="col-md-6" color="primary" (click)="menu()">Menu</button>
+<div class="row justify-content-md-center">
+  <button  class= "px-2 col-md-3 col-lg-3 btn-lg typesOfFood"  (click)="breakfast()">Desayuno</button>
+  <button  class= "px-2 col-md-3 col-lg-3 btn-lg typesOfFood"  (click)="menu()">Menu</button>
 
-  <button mat-button *ngFor="let order of orders; let i=index" (click)="sendOrder(i)">
-    {{ order.dataOrder }}<span> S/.{{ order.price }}.00</span>
-  </button>
-
+  <div class="card" *ngFor="let order of orders; let i=index" style="width: 18rem;">
+    <img class="card-img-top" src="{{order.img}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ order.dataOrder }}<span> S/.{{ order.price }}.00</span></h5>
+      <a (click)="sendOrder(i)" href="#" class="btn btn-primary" >
+          Agregar
+        </a>
+    </div>
+  </div>
 </div>

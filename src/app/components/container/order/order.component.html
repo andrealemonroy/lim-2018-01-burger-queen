@@ -1,15 +1,12 @@
-<div *ngFor="let ord of order">
-  <p>{{ord.dataOrder}} <span>S/.{{ord.price}}.00</span></p>
-</div>
+<ng-container class="mt-5" *ngFor="let ord of order; let i= index" >
+  <div *ngIf="ord.price !== null" class="d-flex">
+    <p>{{ord.dataOrder}} <span>S/.{{ord.price}}.00</span></p>
+    <span (click)="deleteFood(i)" class="ml-3">
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    </span>
+  </div>
+</ng-container>
 
 
-<p>Total:<span >S/.{{price}}.00 </span></p>
-<button (click)="sendOrder()" >Enviar Orden</button>
-
-
-<ng-template #noOrder>
-  <p>Sin pedido</p>
-</ng-template>
-<ng-template #sent>
-  <p></p>
-</ng-template>
+<p>Total:<span>S/.{{price}}.00 </span></p>
+<button class="btn btn-lg" (click)="sendOrder()">Enviar Orden</button>

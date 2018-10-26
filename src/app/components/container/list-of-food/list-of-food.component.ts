@@ -7,7 +7,6 @@ import { FirestoreService } from '../../../services/services.service';
   styleUrls: ['./list-of-food.component.css']
 })
 
-
 export class ListOfFoodComponent implements OnInit {
   public order: any;
   public price: any;
@@ -21,21 +20,8 @@ export class ListOfFoodComponent implements OnInit {
       });
     });
   }
-  ngOnInit() {
+  ngOnInit() { }
 
-    // this.firestoreService.getOrders().subscribe((orderSnapshot) => {
-    // this.order = [];
-    // orderSnapshot.forEach((orderData: any) => {
-    // console.log(orderData);
-    // this.order.push({
-    //   id: orderData.payload.doc.id,
-    //   data: orderData.payload.doc.orderData()
-    // });
-    // console.log(this.order);
-    // });
-
-    // });
-  }
   breakfast() {
     this.firestoreService.getOrders().subscribe(data => {
       this.orders = data.filter(dat => {
@@ -51,11 +37,7 @@ export class ListOfFoodComponent implements OnInit {
     });
   }
   sendOrder(i) {
-    // console.log(this.orders[i]);
     this.orderEvent.emit(this.orders[i]);
     this.price = this.orders[i].price;
-    // console.log(this.price);
-    // return this.price;
   }
-
 }

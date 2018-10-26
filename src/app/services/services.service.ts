@@ -8,30 +8,19 @@ import { map } from 'rxjs/operators';
 export class FirestoreService {
   orders = {};
   constructor(private firestore: AngularFirestore) { }
-  createOrder(data: {
-    dataOrder: string
-  }) {
-    return this.firestore.collection('order').add(data);
-  }
-
-  getSentOrders() {
-    return this.firestore.collection('orderToKitchen').valueChanges();
-  }
-
   getOrders() {
     return this.firestore.collection('order').valueChanges();
   }
-
   updateOrder(data: any) {
-    const date = new Date().getTime();
-    return this.firestore.collection('orderToKitchen').add({data});
+    // const date = new Date().getTime();
+    return this.firestore.collection('orderToKitchen').add({ data });
   }
-  addOrder(id) {
-    this.orders['order'] = this.orders['order'].map((order) => {
-      if (order.id === id) {
-        return { ...order };
-      }
-      return this.orders;
-    });
-  }
+  // addOrder(id) {
+  //   this.orders['order'] = this.orders['order'].map((order) => {
+  //     if (order.id === id) {
+  //       return { ...order };
+  //     }
+  //     return this.orders;
+  //   });
+  // }
 }
