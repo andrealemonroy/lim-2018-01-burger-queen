@@ -338,9 +338,6 @@ Apache-2.0
 @firebase/webchannel-wrapper
 Apache-2.0
 
-@angular/platform-browser
-MIT
-
 @angular/cdk
 MIT
 The MIT License
@@ -366,17 +363,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-@angular/material/toolbar
-
-@angular/animations
+@angular/platform-browser
 MIT
-
-@angular/material/button
 
 @angular/service-worker
-MIT
-
-@angular/forms
 MIT
 
 @angular/fire/firestore
