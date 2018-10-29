@@ -27,7 +27,7 @@
     {
       "name": "Firestore",
       "urls": [
-        "https://console.firebase.google.com/u/1/project/carta-app-angular/database/firestore/data~2F"
+        "https://carta-app-angular.firebaseio.com/**"
       ],
       "cacheConfig": {
         "startegy": "freshness",

@@ -12,12 +12,15 @@ export class ContainerComponent implements OnInit {
   messages = [];
   message = [];
   total = 0;
+  aditional = [];
   ngOnInit() {
   }
 
   receiveOrder($event) {
     this.messages.push($event);
     this.message = $event;
+
+    console.log(this.message);
     this.receivePrice();
     // this.deleteItem();
   }
@@ -25,9 +28,14 @@ export class ContainerComponent implements OnInit {
   receivePrice() {
     this.total = this.messages.reduce((a, b) => a + b.price, 0);
   }
+  // receiveAditional(){
+  //   if (this.message['dataOrder'] === 'Hamburguesa Simple'){
+  //     this.aditional = this.message['aditional']; 
+  //   };
+  // }
   deleteItem($event) {
     this.message = $event;
-    // console.log(this.messages);
+
     this.total = this.messages.reduce((a, b) => a + b.price, 0);
 
     ;

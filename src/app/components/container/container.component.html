@@ -1,4 +1,4 @@
 <div class="row mt-5">
   <app-list-of-food (orderEvent)="receiveOrder($event)" class="col-md-6"></app-list-of-food>
-  <app-order (deleteEvent)="deleteItem($event)"[order]="messages" [price]="total" class="col-md-6 mt-5"></app-order>
+  <app-order (deleteEvent)="deleteItem($event)"[order]="messages" [price]="total" [add]="aditional" class="col-md-5 mt-5 ml-3 bg-orange"></app-order>
 </div>

@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "carta-app-angular",
+    "carta": "carta-app-angular"
+  }
+}

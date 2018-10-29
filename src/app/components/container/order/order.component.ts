@@ -9,19 +9,15 @@ import { FirestoreService } from '../../../services/services.service';
 export class OrderComponent implements OnInit {
   @Input() order: any;
   @Input() price: number;
+  @Input() add: any;
   @Output() deleteEvent = new EventEmitter<string>();
+  // @Output() addEvent = new EventEmitter<number>();
   ord: any;
   data: any;
   id: any;
+  aditional: any;
   constructor(private _firestoreService: FirestoreService) {
-    // this._firestoreService.getSentOrders().subscribe((data) => {
-    //   console.log(data);
-    //   data.map((dat, i) => {
-    //     console.log(i);
-    //     console.log(dat['data'][i]);
-    //       this.total = dat.price.reduce((a, b) => a + b, 0);
-    //   });
-    // });
+
   }
 
   ngOnInit() {
@@ -29,17 +25,30 @@ export class OrderComponent implements OnInit {
 
   sendOrder() {
     this._firestoreService.updateOrder(this.order).then((doc) => {
-      // console.log(doc.id);
-      // this.deleteFood(doc.id);
-      // this.id = doc.id;
-      window.location.reload();
+      console.log(doc.id);
+      // window.location.reload();
     });
   }
   deleteFood(id) {
     console.log(this.order[id]);
 
-    this.order[id] = {dataOrder: '', price: null};
+    this.order[id] = { dataOrder: '', price: null };
     this.deleteEvent.emit(this.order[id]);
   }
-
+  checkValue($event) {
+    console.log($event);
+    if ($event === 'A') {
+      this.price = this.price + 1
+    }
+    else if( $event === 'B'){
+      this.price = this.price -1
+    }
+    else if ($event === 'C') {
+      this.price = this.price + 1
+    }
+    else if ($event === 'D'){
+      this.price = this.price -1
+    }
+    console.log(this.price);
+  }
 }

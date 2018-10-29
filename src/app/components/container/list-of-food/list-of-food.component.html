@@ -1,15 +1,22 @@
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="btn btn-lg col-sm-12 col-md-6 col-lg-6 h3 btn-light" data-toggle="tab" (click)="breakfast()">DESAYUNO</button>
+    <button class="btn btn-lg col-sm-12 col-md-6 col-lg-6 h3 btn-light" data-toggle="tab" (click)="menu()">MENU</button>
 
-<div class="row justify-content-md-center">
-  <button  class= "px-2 col-md-3 col-lg-3 btn-lg typesOfFood"  (click)="breakfast()">Desayuno</button>
-  <button  class= "px-2 col-md-3 col-lg-3 btn-lg typesOfFood"  (click)="menu()">Menu</button>
-
-  <div class="card" *ngFor="let order of orders; let i=index" style="width: 18rem;">
-    <img class="card-img-top" src="{{order.img}}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{ order.dataOrder }}<span> S/.{{ order.price }}.00</span></h5>
-      <a (click)="sendOrder(i)" href="#" class="btn btn-primary" >
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="row">
+    <!-- <div class="col-sm-6 col-md-3 col-lg-3"> -->
+    <div class="card col-sm-6 col-md-5 col-lg-5" *ngFor="let order of orders; let i=index" style="width: 18rem;">
+      <img class="card-img-top" src="{{order.img}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ order.dataOrder }}<span> S/.{{ order.price }}.00</span></h5>
+        <a (click)="sendOrder(i)" href="#" class="btn btn-primary">
           Agregar
         </a>
+      </div>
     </div>
+    <!-- </div> -->
   </div>
 </div>
