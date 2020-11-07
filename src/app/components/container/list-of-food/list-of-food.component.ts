@@ -15,6 +15,7 @@ export class ListOfFoodComponent implements OnInit {
   public orders: any;
   constructor(private firestoreService: FirestoreService) {
     this.firestoreService.getOrders().subscribe(data => {
+      console.log(data);
       this.orders = data.filter(dat => {
         return dat['typeOfFood'] === 'desayuno';
       });
